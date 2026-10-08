@@ -1,0 +1,28 @@
+{
+  "name": "kids-fun-world",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "International Kids Game Collection - 12 colorful mini-games for ages 6-12",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "node e2e/smoke.mjs",
+    "test:buttons": "node e2e/buttons.mjs"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "puppeteer-core": "^24.0.0",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#4aa3ff" />
+    <title>🌈 Kids Fun World — Mini Game Collection</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #4aa3ff;
+        touch-action: none;
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior: none;
+        font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+      }
+      #game-root {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #game-root canvas {
+        display: block;
+        image-rendering: auto;
+      }
+      #boot-fallback {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        color: #fff;
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(180deg, #4aa3ff 0%, #7ed6ff 60%, #b7f0c8 100%);
+        z-index: 5;
+        transition: opacity 0.5s ease;
+      }
+      #boot-fallback .logo {
+        font-size: 64px;
+        animation: bounce 1s ease-in-out infinite;
+      }
+      #boot-fallback .bar {
+        width: 260px;
+        height: 18px;
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      #boot-fallback .fill {
+        width: 30%;
+        height: 100%;
+        border-radius: 12px;
+        background: #ffd93d;
+        animation: slide 1.2s ease-in-out infinite;
+      }
+      #boot-fallback.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      @keyframes slide {
+        0% {
+          margin-left: -30%;
+        }
+        100% {
+          margin-left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-root"></div>
+    <div id="boot-fallback">
+      <div class="logo">🌈</div>
+      <div>KIDS FUN WORLD</div>
+      <div class="bar"><div class="fill"></div></div>
+      <div style="font-size: 18px; font-weight: normal">Loading the fun…</div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

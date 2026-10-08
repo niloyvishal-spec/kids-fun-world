@@ -1,0 +1,12 @@
+# Dependencies / build output
+node_modules/
+dist/
+*.log
+dev.log
+
+# Local secrets - never commit
+.env
+.env.local
+
+# Test artifacts
+e2e/artifacts/
